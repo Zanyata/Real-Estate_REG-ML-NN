@@ -35,10 +35,9 @@ This command creates a copy of `.env.example` and names it `.env`, allowing you 
 ├── LICENSE            <- Open-source license if one is chosen
 ├── README.md          <- The top-level README for developers using this project
 ├── data
-│   ├── external       <- Data from third party sources
 │   ├── interim        <- Intermediate data that has been transformed
 │   ├── processed      <- The final, canonical data sets for modeling
-│   └── raw            <- The original, immutable data dump
+│   └── raw_before_anonymization  <- The original, immutable data dump, hidden
 │
 ├── models             <- Trained and serialized models, model predictions, or model summaries
 │
