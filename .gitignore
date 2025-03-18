@@ -90,7 +90,8 @@ target/
 .venv/
 
 # Exclude trained models
-/models/
+#/models/
+/models/RF.sav
 
 # exclude data from source control by default
 /data/raw_before_anonymization/
