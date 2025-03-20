@@ -1,57 +1,104 @@
-# Data Project Template
 
-<a target="_blank" href="https://datalumina.com/">
-    <img src="https://img.shields.io/badge/Datalumina-Project%20Template-2856f7" alt="Datalumina Project" />
-</a>
+#  Project: Real Estate Price Prediction
 
-## Cookiecutter Data Science
-This project template is a simplified version of the [Cookiecutter Data Science](https://cookiecutter-data-science.drivendata.org) template, created to suit the needs of Datalumina and made available as a GitHub template.
+## Overview
+This project focuses on predicting real estate prices using a combination of traditional machine learning models and deep learning approaches. 
+The dataset was scrapped by the author (1.0-scrapping-real-estate.ipynb), cleaned, and enriched.
+By leveraging Random Forest (RF), XGBoost (XGB), and Neural Networks (NNs), the goal was to find the most effective predictive model.
 
-## Adjusting .gitignore
+Several ensemble learning techniques were explored, including weighted averaging, stacking with meta-learners, and feature engineering with model outputs.
 
-Ensure you adjust the `.gitignore` file according to your project needs. For example, since this is a template, the `/data/` folder is commented out and data will not be exlucded from source control:
+## Table of Contents
+- [Dataset](#dataset)
+- [Data Preprocessing](#Data-Preprocessing)
+- [Models Evaluated](#Models-Evaluated)
+- [Best Performing Model](#Best-Performing-Model)
+- [Key Takeaways](#Key-Takeaways)
+- [Next Steps](#Next-Steps)
+- [Project Organization](#Project-Organization)
+- [Installation & Usage](#Installation-&-Usage)
 
-```plaintext
-# exclude data from source control by default
-# /data/
-```
 
-Typically, you want to exclude this folder if it contains either sensitive data that you do not want to add to version control or large files.
+## Dataset
+The dataset consists of flat listings with various attributes such as:
+* **Numerical Features:** Area, build year, population density, etc.
+* **Categorical Features:** City, district, building type, etc.
+* **Target Variable:** Price, price per square meter - depending on the tactics chosen
 
-## Duplicating the .env File
-To set up your environment variables, you need to duplicate the `.env.example` file and rename it to `.env`. You can do this manually or using the following terminal command:
 
-```bash
-cp .env.example .env # Linux, macOS, Git Bash, WSL
-copy .env.example .env # Windows Command Prompt
-```
+## Data Preprocessing
+**Feature Engineering:**
+- Numerical features scaled using MinMaxScaler.
+- Categorical variables transformed using encoding.
+- Aggregation, Data Enrichment
+- Additional features extracted from model outputs (meta-features for stacking).
 
-This command creates a copy of `.env.example` and names it `.env`, allowing you to configure your environment variables specific to your setup.
+**Feature Selection:**
+- Multicollinearity check
+- Feature Importances and BorutaPy
+
+**Data Splitting:**
+- Training, validation, and test sets created using stratified sampling.
+
+## Models Evaluated
+1. **XGBoost & Random Forest Models** - Hyperparameter-tuned versions.
+2. **Weighted Averaging** - Combining RF & XGB.
+3. **Stacking with Meta-Learners** - Using Ridge, (XGBoost and LGBM were underperforming).
+4. **Feature Engineering with Model Outputs** - Using RF & XGB predictions as NN inputs.
+
+## Best Performing Model
+The **Stacked Model with Ridge Meta-Learner** provided the most stable and high-performing results:
+- **Test R² Score**: 0.8363
+- **Test MAE**: 1.4278
+
+## Key Takeaways
+- **XGBoost & RF individually performed well** but stacking improved performance.
+- **Neural Networks** did not outperform tree-based models, even with embeddings & feature engineering.
+- **Stacking with Ridge Regression worked best** among tested meta-learners.
+- **Weighted averaging** of RF & XGB performed best.
+
+
+## Next Steps
+- Experiment with additional feature engineering.
+- Explore more sophisticated stacking methods.
+- Models have difficulty predicting the price for very expensive housing. A further possible way forward could be to categorize expensive housing and analyze it separately.
 
 
 ## Project Organization
 
 ```
-├── LICENSE            <- Open-source license if one is chosen
-├── README.md          <- The top-level README for developers using this project
+├── LICENSE                                 <- Open-source license
+├── README.md                               <- Project documentation
 ├── data
-│   ├── interim        <- Intermediate data that has been transformed
-│   ├── processed      <- The final, canonical data sets for modeling
-│   └── raw_before_anonymization  <- The original, immutable data dump, hidden
+│   ├── interim                             <- Intermediate data after scrapping - input for price prediction
+│   └── processed                           <- The final, canonical data sets for modeling
 │
-├── models             <- Trained and serialized models, model predictions, or model summaries
+├── models                                  <- Trained models, model predictions, or model summaries
 │
-├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`
+├── notebooks                               <- Jupyter notebooks
+│   ├── 1.0-scrapping-real-estate.ipynb     <- code to scrapp the data - anonymized, deprived of key variables
+│   └── 2.0-price-prediction.ipynb          <- code with data preprocessing and models
 │
-├── reports            <- Generated analysis (Profilr Report)
-│   └── figures        <- Generated graphics and figures to be used in reporting
+├── reports                                 <- Generated analysis (Profile Report)
+│   └── figures                             <- The most important generated graphics and figures
 │
-└── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-                          generated with `pip freeze > requirements.txt`
-
-
+└── requirements.txt                        <- Python dependencies
 ```
+## Installation & Usage
+1. Clone the repository:
+```bash
+https://github.com/Zanyata/Real-estate_REG-ML-NN.git
+cd Real-estate_REG-ML-NN
+```
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+3. Run Jupyter Notebook:
+```bash
+jupyter notebook
+```
+Train models & evaluate performance using provided notebooks.
+
 
 --------
