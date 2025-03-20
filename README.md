@@ -76,8 +76,8 @@ The **Stacked Model with Ridge Meta-Learner** provided the most stable and high-
 ├── models                                <- Trained models, model predictions, or model summaries
 │
 ├── notebooks                             <- Jupyter notebooks
-│   ├── 1.0-scrapping-real-estate.ipynb   <- code to scrapp the data - anonymized, deprived of key variables
-│   └── 2.0-price-prediction.ipynb          <- code with data preprocessing and models
+│   ├── 1.0-scrapping-real-estate.ipynb   <- scrapping code-anonymized, deprived of key variables
+│   └── 2.0-price-prediction.ipynb        <- code with data preprocessing and models
 │
 ├── reports                               <- Generated analysis (Profile Report)
 │   └── figures                           <- The most important generated graphics and figures
