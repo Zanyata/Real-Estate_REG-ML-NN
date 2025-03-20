@@ -70,14 +70,14 @@ The **Stacked Model with Ridge Meta-Learner** provided the most stable and high-
 ├── LICENSE                               <- Open-source license
 ├── README.md                             <- Project documentation
 ├── data
-│   ├── interim                           <- Intermediate data after scrapping - input for price prediction
+│   ├── interim                           <- Data after scrapping - input for price prediction
 │   └── processed                         <- The final, canonical data sets for modeling
 │
 ├── models                                <- Trained models, model predictions, or model summaries
 │
 ├── notebooks                             <- Jupyter notebooks
-│   ├── 1.0-scrapping-real-estate.ipynb   <- scrapping code-anonymized, deprived of key variables
-│   └── 2.0-price-prediction.ipynb        <- code with data preprocessing and models
+│   ├── 1.0-scrapping-real-estate.ipynb   <- Scrapping code-anonymized, deprived of key variables
+│   └── 2.0-price-prediction.ipynb        <- Code with data preprocessing and models
 │
 ├── reports                               <- Generated analysis (Profile Report)
 │   └── figures                           <- The most important generated graphics and figures
