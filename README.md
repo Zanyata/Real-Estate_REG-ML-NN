@@ -67,22 +67,22 @@ The **Stacked Model with Ridge Meta-Learner** provided the most stable and high-
 ## Project Organization
 
 ```
-├── LICENSE                                 <- Open-source license
-├── README.md                               <- Project documentation
+├── LICENSE                               <- Open-source license
+├── README.md                             <- Project documentation
 ├── data
-│   ├── interim                             <- Intermediate data after scrapping - input for price prediction
-│   └── processed                           <- The final, canonical data sets for modeling
+│   ├── interim                           <- Intermediate data after scrapping - input for price prediction
+│   └── processed                         <- The final, canonical data sets for modeling
 │
-├── models                                  <- Trained models, model predictions, or model summaries
+├── models                                <- Trained models, model predictions, or model summaries
 │
-├── notebooks                               <- Jupyter notebooks
-│   ├── 1.0-scrapping-real-estate.ipynb     <- code to scrapp the data - anonymized, deprived of key variables
+├── notebooks                             <- Jupyter notebooks
+│   ├── 1.0-scrapping-real-estate.ipynb   <- code to scrapp the data - anonymized, deprived of key variables
 │   └── 2.0-price-prediction.ipynb          <- code with data preprocessing and models
 │
-├── reports                                 <- Generated analysis (Profile Report)
-│   └── figures                             <- The most important generated graphics and figures
+├── reports                               <- Generated analysis (Profile Report)
+│   └── figures                           <- The most important generated graphics and figures
 │
-└── requirements.txt                        <- Python dependencies
+└── requirements.txt                      <- Python dependencies
 ```
 ## Installation & Usage
 1. Clone the repository:
