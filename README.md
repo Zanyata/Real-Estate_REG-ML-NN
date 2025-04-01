@@ -26,6 +26,10 @@ The dataset consists of flat listings with various attributes such as:
 * **Target Variable:** Price, price per square meter - depending on the tactics chosen
 
 
+## Geographical Distribution of Flat Prices Across Major Polish Cities
+![geographical_flats_distribution](reports\figures\geographical_flats_distribution.png)
+
+
 ## Data Preprocessing
 **Feature Engineering:**
 - Numerical features scaled using MinMaxScaler.
