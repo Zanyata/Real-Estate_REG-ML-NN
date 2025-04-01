@@ -91,10 +91,10 @@ The **Stacked Model with Ridge Meta-Learner** provided the most stable and high-
 ## Installation & Usage
 1. Clone the repository:
 ```bash
-https://github.com/Zanyata/Real-Estate_REG-ML-NN.git
+https://github.com/Zanyata/Real-Estate-REG-ML-NN.git
 ```
 ```bash
-cd Real-Estate_REG-ML-NN
+cd Real-Estate-REG-ML-NN
 ```
 2. Install dependencies:
 ```bash
